@@ -1,0 +1,12 @@
+(rule (with-stdout-to jsoo_run.ml (echo "Main.run ();;\n")))
+(rule (copy jsoo_run.ml unix_run.ml))
+
+(executable
+ (name jsoo_run)
+ (modules jsoo_run)
+ (libraries main fileio_jsoo))
+
+(executable
+ (name unix_run)
+ (modules unix_run)
+ (libraries main fileio_unix))

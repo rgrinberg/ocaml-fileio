@@ -1,0 +1,9 @@
+(alias
+ (name default)
+ (deps ./exe/jsoo_run.bc.js)
+ (action
+  (progn
+   (echo "Unix Implementation\n")
+   (run ./exe/unix_run.exe)
+   (echo "Jsoo Implementation\n")
+   (run %{bin:node} %{deps}))))
